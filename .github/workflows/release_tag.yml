@@ -84,7 +84,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ibexa/changelog-generator-action
-          ref: master
+          ref: IBX-149
 
       - name: Setup Python environment
         uses: actions/setup-python@v2
@@ -99,6 +99,7 @@ jobs:
         id: generator
         env:
           INPUT_GITHUB_TOKEN: ${{ secrets.TRAVIS_GITHUB_TOKEN }}
+          INPUT_JIRA_TOKEN: ${{ secrets.JIRA_TOKEN }}
         run: |
           cat > input.json <<'EOF'
           ${{ needs.provide_changed_packages.outputs.matrix }}
