@@ -91,9 +91,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install pygithub
+      - name: Install pygithub & jira
         run: |
-          pip install pygithub
+          pip install pygithub jira
 
       - name: Run generator in a loop
         id: generator
